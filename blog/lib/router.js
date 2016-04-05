@@ -11,3 +11,8 @@ Router.route('/new', {
 	name: 'newPost',
 	controller: 'BaseController'
 });
+
+Router.route('/:_id', {
+	name: 'singlePost',
+	controller: 'SinglePageController'
+});
