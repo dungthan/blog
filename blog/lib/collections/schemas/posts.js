@@ -6,6 +6,7 @@ var postFields = {
 	category: {
 		type: String,
 		label: 'Category',
+
 	},
 	thumbnail: {
 		type: String,
@@ -23,6 +24,13 @@ var postFields = {
 		type: String,
 		label: 'Tag',
 		optional: true,
+	},
+	_id: {
+		type: String,
+		optional: true,
+		autoform: {
+			omit: true,
+		}
 	},
 	userId: {
 		type: String,

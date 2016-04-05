@@ -7,9 +7,14 @@ Router.route('/', {
 	controller: 'MainPageController'
 });
 
-Router.route('/new', {
+Router.route('/new-post', {
 	name: 'newPost',
 	controller: 'BaseController'
+});
+
+Router.route('/category', {
+	name: 'category',
+	controller: 'BaseController',
 });
 
 Router.route('/:_id', {
