@@ -1,5 +1,5 @@
 Router.configure({
-
+	loadingTemplate: 'spinner',
 });
 
 Router.route('/', {
@@ -21,3 +21,19 @@ Router.route('/:_id', {
 	name: 'singlePost',
 	controller: 'SinglePageController'
 });
+
+Router.onBeforeAction(function () {
+
+	if (!Meteor.user()) {
+
+		if (Meteor.loggingIn()) {
+			this.render('loadingTemplate');
+		} else {
+			this.render('accessDenied');
+		}
+
+	} else {
+		this.next();
+	}
+
+}, { only: ['newPost', 'category'] });
