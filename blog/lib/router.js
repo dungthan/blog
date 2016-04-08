@@ -7,6 +7,11 @@ Router.route('/', {
 	controller: 'MainPageController'
 });
 
+Router.route('/101146', {
+	name: 'backend',
+	controller: 'BackEndController'
+});
+
 Router.route('/new-post', {
 	name: 'newPost',
 	controller: 'BaseController'
@@ -15,6 +20,16 @@ Router.route('/new-post', {
 Router.route('/category', {
 	name: 'category',
 	controller: 'BaseController',
+});
+
+Router.route('/login', {
+	name: 'login',
+	controller: 'BackEndController'
+});
+
+Router.route('/register', {
+	name: 'register',
+	controller: 'BackEndController'
 });
 
 Router.route('/:_id', {

@@ -1,4 +1,4 @@
-<template name='mainLayout'>
+<template name='adminLayout'>
 	<nav class="navbar navbar-default">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -9,35 +9,34 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				{{#linkTo route='home' class='navbar-brand'}}
-					DungThan
+				{{#linkTo route='backend' class='navbar-brand'}}
+					DungThan - BE
 				{{/linkTo}}
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thể loại <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Đăng bài<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">PHP</a></li>
-							<li><a href="#">MySQL</a></li>
-							<li><a href="#">HTML, CSS, Javascript</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Meteor</a></li>
-							<li><a href="#">MongoDB</a></li>
-							<li><a href="#">AgulaJs</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">DynamoDb</a></li>
+							<li>
+								{{#linkTo route='newPost'}}
+									Post
+								{{/linkTo}}
+							</li>
+							<li>
+								{{#linkTo route='category'}}
+									Category
+								{{/linkTo}}
+							</li>
 						</ul>
 					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
 					<li>
 						{{#linkTo route='login'}}
 							Đăng nhập
 						{{/linkTo}}
-					</li>
+					</li>	
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
