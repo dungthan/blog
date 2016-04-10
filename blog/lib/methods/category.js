@@ -16,5 +16,8 @@ Meteor.methods({
 		category._id = Category.insert(category);
 
 		return category;
+	},
+	delCategory: function (id) {
+		Category.remove(id);
 	}
 });

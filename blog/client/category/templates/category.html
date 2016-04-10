@@ -1,0 +1,27 @@
+<template name='category'>
+	<h1>This is new category</h1>
+	{{> quickForm collection="Category" id="submitCategoryForm" type="method" meteormethod="submitCategory" }}
+	<hr />
+	{{> listCategorys}}
+</template>
+
+<template name='listCategorys'>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th width='70%'>Tên</th>
+				<th width='20%'>Thể loại</th>
+				<th width='10%'>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each categorys}}
+			<tr>
+				<td>{{name}}</td>
+				<td>{{group}}</td>
+				<td><a href='#' class='del-category'>xoá</a></td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>

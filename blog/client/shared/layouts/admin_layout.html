@@ -33,9 +33,13 @@
 						</ul>
 					</li>
 					<li>
-						{{#linkTo route='login'}}
-							Đăng nhập
-						{{/linkTo}}
+						{{#if currentUser}}
+							<a href="#" class="logout">Đăng xuất</a>
+						{{else}}
+							{{#linkTo route='login'}}
+								Đăng nhập
+							{{/linkTo}}
+						{{/if}}
 					</li>	
 				</ul>
 			</div><!-- /.navbar-collapse -->

@@ -6,6 +6,13 @@ var postFields = {
 	category: {
 		type: String,
 		label: 'Category',
+		autoform: {
+			options: function () {
+				return Category.find().map(function (item) {
+					return { label: item.name, value: item._id };
+				});
+			}
+		}
 
 	},
 	thumbnail: {

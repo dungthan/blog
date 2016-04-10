@@ -14,41 +14,37 @@ Router.route('/101146', {
 
 Router.route('/new-post', {
 	name: 'newPost',
-	controller: 'BaseController'
+	controller: 'NewPostController'
 });
 
 Router.route('/category', {
 	name: 'category',
-	controller: 'BaseController',
+	controller: 'CategoryController',
 });
 
 Router.route('/login', {
 	name: 'login',
-	controller: 'BackEndController'
+	controller: 'BackEndController',
+	onBeforeAction: function () {
+		if (!Meteor.user())
+			this.next();
+		else 
+			Router.go('backend');
+	}
 });
 
 Router.route('/register', {
 	name: 'register',
-	controller: 'BackEndController'
+	controller: 'BackEndController',
+	onBeforeAction: function () {
+		if (!Meteor.user())
+			this.next();
+		else 
+			Router.go('backend');
+	}
 });
 
 Router.route('/:_id', {
 	name: 'singlePost',
 	controller: 'SinglePageController'
 });
-
-Router.onBeforeAction(function () {
-
-	if (!Meteor.user()) {
-
-		if (Meteor.loggingIn()) {
-			this.render('loadingTemplate');
-		} else {
-			this.render('accessDenied');
-		}
-
-	} else {
-		this.next();
-	}
-
-}, { only: ['newPost', 'category'] });
