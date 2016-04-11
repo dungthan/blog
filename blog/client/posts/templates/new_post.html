@@ -2,3 +2,6 @@
 	<h1>Create new a post</h1>
 	{{> quickForm collection="Posts" id="submitPostForm" type="method" meteormethod="submitPost"}}
 </template>
+<template name='prevThumbnail'>
+	<img src="{{file.url}}" class="thumbnail" style="width: 100%" />
+</template>

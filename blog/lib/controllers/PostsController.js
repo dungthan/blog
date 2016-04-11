@@ -1,5 +1,8 @@
 NewPostController = BackEndController.extend({
 	template: 'newPost',
+	waitOn: function () {
+		return Meteor.subscribe('allCategorys');
+	},
 	onBeforeAction: function () {
 		if (!Meteor.user()) {
 

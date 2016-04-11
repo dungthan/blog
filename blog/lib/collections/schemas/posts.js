@@ -17,14 +17,27 @@ var postFields = {
 	},
 	thumbnail: {
 		type: String,
-		label: 'Thumbnail'
+		label: 'Thumbnail',
+		autoform: {
+			afFieldInput: {
+				type: 'fileUpload',
+				collection: 'Images',
+				accept: 'image/*',
+				previewTemplate: 'prevThumbnail'
+			}
+		}
 	},
 	body: {
 		type: String,
 		label: 'Content',
 		autoform: {
-			type: 'textarea',
-			rows: 5,
+			type: 'froala',
+			afFieldInput: {
+      			inlineMode: false,
+      			buttons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'color', 'formatBlock', 'blockStyle', 'inlineStyle', 'align', 'insertOrderedList', 'insertUnorderedList', 'outdent', 'indent', 'selectAll', 'createLink', 'insertImage', 'insertVideo', 'table', 'undo', 'redo', 'html', 'insertHorizontalRule', 'uploadFile', 'removeFormat', 'fullscreen'],
+      			height: '300',
+
+			}
 		}
 	},
 	tag: {

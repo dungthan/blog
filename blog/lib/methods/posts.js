@@ -18,5 +18,8 @@ Meteor.methods({
 
 		return post;
 
+	},
+	removeImage: function (id) {
+		Images.remove(id);
 	}
 });
