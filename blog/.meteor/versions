@@ -51,7 +51,6 @@ email@1.0.10
 es5-shim@4.5.8
 fastclick@1.0.9
 fortawesome:fontawesome@4.5.0
-froala:editor@2.1.0
 geojson-utils@1.0.6
 hot-code-push@1.0.2
 html-tools@1.0.7
@@ -86,6 +85,7 @@ momentjs:moment@2.10.6
 mongo@1.1.5
 mongo-id@1.0.2
 mongo-livedata@1.0.10
+mpowaga:autoform-summernote@0.4.3
 mpowaga:jquery-fileupload@9.11.2
 mpowaga:jquery-ui-widget@1.11.4
 npm-bcrypt@0.7.8_2
@@ -111,9 +111,9 @@ srp@1.0.6
 standard-minifier-css@1.0.4
 standard-minifier-js@1.0.4
 stylus@2.511.3
+summernote:standalone@0.7.3
 templating@1.1.7
 templating-tools@1.0.2
-thegeekmachine:autoform-froala@0.0.7
 tracker@1.0.11
 twbs:bootstrap@3.3.6
 ui@1.0.9
