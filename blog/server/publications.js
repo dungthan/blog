@@ -9,3 +9,7 @@ Meteor.publish('singlePost', function(id) {
 Meteor.publish('allCategorys', function () {
 	return Category.find();
 });
+
+Meteor.publish('allImages', function () {
+	return Images.find();
+});

@@ -6,10 +6,11 @@ var postFields = {
 	category: {
 		type: String,
 		label: 'Category',
+		optional: true,
 		autoform: {
 			options: function () {
 				return Category.find().map(function (item) {
-					return { label: item.name, value: item._id };
+					return { label: item.name, value: item.categorySlug };
 				});
 			}
 		}
@@ -21,7 +22,7 @@ var postFields = {
 		autoform: {
 			afFieldInput: {
 				type: 'fileUpload',
-				collection: 'Images',
+				collection: 'Thumbnail',
 				accept: 'image/*',
 				previewTemplate: 'prevThumbnail'
 			}
@@ -31,23 +32,22 @@ var postFields = {
 		type: String,
 		label: 'Content',
 		autoform: {
-			//type: 'froala',
-			afFieldInput: {
-				type: 'summernote',
-				class: 'editor',
-				settings: {
-					height: 300,
-				}
-      			//inlineMode: false,
-      			//buttons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'color', 'formatBlock', 'blockStyle', 'inlineStyle', 'align', 'insertOrderedList', 'insertUnorderedList', 'outdent', 'indent', 'selectAll', 'createLink', 'insertImage', 'insertVideo', 'table', 'undo', 'redo', 'html', 'insertHorizontalRule', 'uploadFile', 'removeFormat', 'fullscreen'],
-
-			}
+			type: 'textarea',
+			rows: 5,
+			id: 'post-body',
 		}
 	},
-	tag: {
+	// tag: {
+	// 	type: String,
+	// 	label: 'Tag',
+	// 	optional: true,
+	// },
+	categoryName: {
 		type: String,
-		label: 'Tag',
 		optional: true,
+		autoform: {
+			omit: true
+		}
 	},
 	_id: {
 		type: String,

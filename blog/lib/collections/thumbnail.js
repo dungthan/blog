@@ -2,14 +2,14 @@ var createThumbnail = function (fileObj, readStream, writeStream) {
 	readStream.pipe(writeStream);
 };
 
-Images = new FS.Collection('images', {
+Thumbnail = new FS.Collection('thumbnail', {
 	stores: [
-		new FS.Store.FileSystem('imagesStore', { path: '/Volumes/Data/METEOR/blog/blog/client/imagesStore' }),
-		new FS.Store.FileSystem('postImages', { path: '/Volumes/Data/METEOR/blog/blog/client/post-images', transformWrite: createThumbnail })
+		new FS.Store.FileSystem('thumbStore', { path: '/Volumes/Data/METEOR/blog/blog/client/imagesStore' }),
+		new FS.Store.FileSystem('thumbnail', { path: '/Volumes/Data/METEOR/blog/blog/client/thumbnail', transformWrite: createThumbnail })
 	]
 });
 
-Images.allow({
+Thumbnail.allow({
 	insert: function (userId, doc) {
         return true;
     },

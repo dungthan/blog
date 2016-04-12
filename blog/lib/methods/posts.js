@@ -6,13 +6,18 @@ Meteor.methods({
 		if (!user)
 			throw new Meteor.Error(401, 'You need to login first');
 
+		var category = Category.findOne({categorySlug: post.category});
+
 		var paramsPost = {
 			userId: user._id,
 			author: 'Author',
-			createdAt: new Date()
+			createdAt: new Date(),
+			categoryName: category.name
 		}
 
 		_.extend(post, paramsPost);
+
+		console.log(post);
 
 		post._id = Posts.insert(post);
 
@@ -20,6 +25,9 @@ Meteor.methods({
 
 	},
 	removeImage: function (id) {
-		Images.remove(id);
+		Thumbnail.remove(id);
+	},
+	insertImage: function (file) {
+		Images.insert(file);
 	}
 });
