@@ -1,5 +1,13 @@
 <template name='singlePost'>
-	<h2>{{title}}</h2>
+	<div class="post-header">
+		<h2><p>{{title}}</p></h2>
+		{{#with FS.GetFile "thumbnail" thumbnail}} 
+			<img src="{{this.url store='thumbnail'}}" width="100%" /> 
+		{{/with}}
+	</div>
+	<hr />
+
 	<p>{{{body}}}</p>
+
 	<p>by {{author}}</p>
 </template>

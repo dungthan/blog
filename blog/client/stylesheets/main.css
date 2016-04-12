@@ -1,4 +1,20 @@
-/*.dropdownForm {
-	width: 250%;
-	padding: 10px 15px;
-}*/
+.post-header {
+	position: relative;
+	height: 200px;
+	overflow: hidden;
+}
+
+.post-header img {
+	position: absolute;
+	top: 0px;
+	height: 500px;
+}
+
+.post-header h2 {
+	position: absolute;
+	bottom: 0px;
+	color: #fff;
+	z-index: 9999;
+	padding: 10px;
+	background: rgba(0, 0, 0, .5);
+}

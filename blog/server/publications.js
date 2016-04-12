@@ -13,3 +13,8 @@ Meteor.publish('allCategorys', function () {
 Meteor.publish('allImages', function () {
 	return Images.find();
 });
+
+Meteor.publish('singleThumbnail', function (id) {
+	var post = Posts.findOne(id);
+	return Thumbnail.find(post.thumbnail);
+});

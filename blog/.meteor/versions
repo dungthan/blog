@@ -110,7 +110,7 @@ srp@1.0.6
 standard-minifier-css@1.0.4
 standard-minifier-js@1.0.4
 stylus@2.511.3
-summernote:standalone@0.8.1
+summernote:standalone@0.6.16
 templating@1.1.7
 templating-tools@1.0.2
 tracker@1.0.11

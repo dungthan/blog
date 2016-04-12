@@ -27,4 +27,4 @@ ian:accounts-ui-bootstrap-3
 sacha:spin
 cfs:filesystem
 cfs:standard-packages
-summernote:standalone
+summernote:standalone@=0.6.16

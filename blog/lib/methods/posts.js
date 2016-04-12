@@ -17,8 +17,6 @@ Meteor.methods({
 
 		_.extend(post, paramsPost);
 
-		console.log(post);
-
 		post._id = Posts.insert(post);
 
 		return post;
