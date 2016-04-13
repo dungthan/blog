@@ -26,7 +26,7 @@ Template.newPost.onRendered(function () {
 			['para', ['ul', 'ol', 'paragraph']],
 			['height', ['height']],
 			['table', ['table']],
-			['insert', ['link', 'picture', 'hr']],
+			['insert', ['link', 'picture', 'hr', 'video']],
 			['view', ['fullscreen', 'codeview']],
 			['help', ['help']],
 	        ['highlight', ['highlight']],
@@ -36,8 +36,9 @@ Template.newPost.onRendered(function () {
 				template.autorun(function (c) {
 					fileObj = Images.findOne(fileObj._id);
 					var url = fileObj.url();
+					var hostname = 'http://' + window.location.hostname + ':3000';
 					if (url) {
-						$("#post-body").summernote("insertImage", fileObj.url(), "Image Title"); 
+						$("#post-body").summernote("insertImage", hostname + fileObj.url(), "Image Title"); 
 						c.stop();
 					}
 				});
