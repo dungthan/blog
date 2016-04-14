@@ -66,6 +66,7 @@ iron:location@1.0.11
 iron:middleware-stack@1.0.11
 iron:router@1.0.12
 iron:url@1.0.11
+jackyqiu:meteor-jquery-nicescroll@3.6.0
 jquery@1.11.6
 launch-screen@1.0.8
 less@2.5.6
@@ -77,6 +78,7 @@ meteor-base@1.0.2
 minifier-css@1.1.9
 minifier-js@1.1.9
 minimongo@1.0.12
+mizzao:build-fetcher@0.2.0
 mobile-experience@1.0.2
 mobile-status-bar@1.0.10
 modules@0.5.1

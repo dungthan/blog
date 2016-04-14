@@ -4,8 +4,8 @@ var createThumbnail = function (fileObj, readStream, writeStream) {
 
 Thumbnail = new FS.Collection('thumbnail', {
 	stores: [
-		new FS.Store.FileSystem('thumbStore', { path: '/Users/dung/Resources/Meteor/blog/blog/client/imagesStore' }),
-		new FS.Store.FileSystem('thumbnail', { path: '/Users/dung/Resources/Meteor/blog/blog/client/thumbnail', transformWrite: createThumbnail })
+		new FS.Store.FileSystem('thumbStore', { path: '/Volumes/Data/METEOR/blog/blog/client/imagesStore' }),
+		new FS.Store.FileSystem('thumbnail', { path: '/Volumes/Data/METEOR/blog/blog/client/thumbnail', transformWrite: createThumbnail })
 	]
 });
 

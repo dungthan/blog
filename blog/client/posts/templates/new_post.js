@@ -14,6 +14,7 @@ Template.newPost.events({
 	}
 });
 
+
 Template.newPost.onRendered(function () {
 	var template = this;
 	$('#post-body').summernote({
@@ -38,7 +39,9 @@ Template.newPost.onRendered(function () {
 					var url = fileObj.url();
 					var hostname = 'http://' + window.location.hostname + ':3000';
 					if (url) {
-						$("#post-body").summernote("insertImage", hostname + fileObj.url(), "Image Title"); 
+						var fullUrl = hostname + fileObj.url();
+						//console.log(fullUrl.replace("http://localhost:3000", ""));
+						$("#post-body").summernote("insertImage", fullUrl.replace("http://localhost:3000", ""), "Image Title"); 
 						c.stop();
 					}
 				});

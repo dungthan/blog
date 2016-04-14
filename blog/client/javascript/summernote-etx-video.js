@@ -57,7 +57,7 @@
       var youtubeId = ytMatch[1];
       $video = $('<iframe>')
         .attr('frameborder', 0)
-        .attr('src', '//www.youtube.com/embed/' + youtubeId)
+        .attr('src', 'https://www.youtube.com/embed/' + youtubeId)
         .attr('width', '640').attr('height', '360');
     } else if (igMatch && igMatch[0].length) {
       $video = $('<iframe>')

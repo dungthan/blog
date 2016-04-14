@@ -1,0 +1,1 @@
+App.accessRule('https://www.youtube.com', { type: 'navigation' } );
