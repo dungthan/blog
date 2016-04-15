@@ -6,7 +6,10 @@ MainPageController = BaseController.extend({
 	},
 
 	waitOn: function() {
-		return Meteor.subscribe('allPosts', this.findOptions());
+		return [
+			Meteor.subscribe('allPosts', this.findOptions()),
+			Meteor.subscribe('allThumbnails', this.findOptions())
+		];
 	},
 	
 	data: function() {

@@ -18,3 +18,7 @@ Meteor.publish('singleThumbnail', function (id) {
 	var post = Posts.findOne(id);
 	return Thumbnail.find(post.thumbnail);
 });
+
+Meteor.publish('allThumbnails', function () {
+	return Thumbnail.find();
+});

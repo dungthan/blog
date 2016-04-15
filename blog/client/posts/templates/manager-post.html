@@ -1,0 +1,25 @@
+<template name='managerPost'>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th width='70%'>Title</th>
+				<th width='20%'>Thể loại</th>
+				<th width='10%'>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each posts}}
+			<tr>
+				<td>{{title}}</td>
+				<td>{{categoryName}}</td>
+				<td>
+					{{#linkTo route='editPost'}}
+						sửa
+					{{/linkTo}} | 
+					<a href='#' class='del-post'>xoá</a>
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>

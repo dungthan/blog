@@ -1,0 +1,4 @@
+<template name='editPost'>
+	<h1>Edit a post: {{title}}</h1>
+	{{> quickForm collection="Posts" id="submitPostFormEdit" type="method-update" doc=this meteormethod="submitPostEdit" }}
+</template>

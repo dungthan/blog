@@ -1,7 +1,10 @@
 <template name='postItem'>
-	<h3>
-		{{#linkTo route='singlePost'}}
-			{{title}}
-		{{/linkTo}}
-	</h3>
+	{{#linkTo route='singlePost'}}
+		<div class="post-header">
+			<h2><p>{{title}}</p></h2>
+			{{#with FS.GetFile "thumbnail" thumbnail}} 
+				<img src="{{this.url store='thumbnail'}}" width="100%" /> 
+			{{/with}}
+		</div>
+	{{/linkTo}}
 </template>

@@ -17,6 +17,16 @@ Router.route('/new-post', {
 	controller: 'NewPostController'
 });
 
+Router.route('/edit-post/:_id', {
+	name: 'editPost',
+	controller: 'EditPostController'
+});
+
+Router.route('/post-manager', {
+	name: 'postManage',
+	controller: 'ManagerPostController'
+});
+
 Router.route('/category', {
 	name: 'category',
 	controller: 'CategoryController',
