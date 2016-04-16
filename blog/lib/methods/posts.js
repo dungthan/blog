@@ -6,13 +6,15 @@ Meteor.methods({
 		if (!user)
 			throw new Meteor.Error(401, 'You need to login first');
 
-		var category = Category.findOne({categorySlug: post.category});
+		var category = Category.findOne({slug: post.category});
 
 		var paramsPost = {
 			userId: user._id,
-			author: 'Author',
 			createdAt: new Date(),
-			categoryName: category.name
+			updatedAt: new Date(),
+			categoryName: category.name,
+			active: true,
+			totalView: 0
 		}
 
 		_.extend(post, paramsPost);
@@ -37,13 +39,13 @@ Meteor.methods({
 		if (!user)
 			throw new Meteor.Error(401, 'You need to login first');
 
-		var category = Category.findOne({categorySlug: post.$set.category});
+		var category = Category.findOne({slug: post.$set.category});
 
 		var paramsPost = {
 			userId: user._id,
-			author: 'Author',
-			createdAt: new Date(),
-			categoryName: category.name
+			updatedAt: new Date(),
+			categoryName: category.name,
+			active: true
 		}
 
 		_.extend(post.$set, paramsPost);

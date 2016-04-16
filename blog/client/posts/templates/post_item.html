@@ -1,10 +1,26 @@
 <template name='postItem'>
-	{{#linkTo route='singlePost'}}
-		<div class="post-header">
-			<h2><p>{{title}}</p></h2>
-			{{#with FS.GetFile "thumbnail" thumbnail}} 
-				<img src="{{this.url store='thumbnail'}}" width="100%" /> 
-			{{/with}}
+	<article class="post-item">
+		<span class="post-meta">
+			T04
+			<span>15</span>
+		</span>
+		<h2 class="title">
+			{{#linkTo route='singlePost'}}
+				Investing in the WordPress Community with Matt Cromwell
+			{{/linkTo}}
+		</h2>
+		<p class="meta-info">
+			Đăng: ngày 15 tháng 04 năm 2016 bởi DungThan trong PHP
+		</p>
+		<div class="post-tumbnail">
+			{{#linkTo route='singlePost'}}
+				{{#with FS.GetFile "thumbnail" thumbnail}}
+						<img src="{{this.url store='thumbnail'}}" width="100%" class="thumbnail" />
+				{{/with}}
+			{{/linkTo}}
 		</div>
-	{{/linkTo}}
+		<p class="post-des">
+			{{description}}
+		</p>
+	</article>
 </template>

@@ -1,5 +1,5 @@
 <template name='mainLayout'>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default dt-navbar-default">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -17,20 +17,7 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thể loại <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">PHP</a></li>
-							<li><a href="#">MySQL</a></li>
-							<li><a href="#">HTML, CSS, Javascript</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Meteor</a></li>
-							<li><a href="#">MongoDB</a></li>
-							<li><a href="#">AgulaJs</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">DynamoDb</a></li>
-						</ul>
-					</li>
+					<li><a href="#">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
@@ -42,13 +29,16 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
-	<div class="container" id="container">
-		<div class="row">
-			<div class="col-lg-2"></div>
-			<div class="col-lg-8">
-				{{> yield}}
+	<div id="wrap-area">
+		<div class="container" id="container">
+			<div class="row">
+				<div class="col-lg-9" id="left-area">
+					{{> yield}}
+				</div>
+				<div class="col-lg-3" id="right-area">
+					{{> rightArea}}
+				</div>
 			</div>
-			<div class="col-lg-2"></div>
 		</div>
 	</div>
 </template>

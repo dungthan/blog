@@ -4,10 +4,12 @@ var createThumbnail = function (fileObj, readStream, writeStream) {
 
 Thumbnail = new FS.Collection('thumbnail', {
 	stores: [
-		new FS.Store.FileSystem('thumbStore', { path: '/Volumes/Data/METEOR/blog/blog/client/imagesStore' }),
-		new FS.Store.FileSystem('thumbnail', { path: '/Volumes/Data/METEOR/blog/blog/client/thumbnail', transformWrite: createThumbnail })
+		new FS.Store.FileSystem('thumbStore', { path: Meteor.settings.pathRoot + '/client/imagesStore' }),
+		new FS.Store.FileSystem('thumbnail', { path: Meteor.settings.pathRoot + '/client/thumbnail', transformWrite: createThumbnail })
 	]
 });
+
+console.log(Meteor.settings.pathRoot);
 
 Thumbnail.allow({
 	insert: function (userId, doc) {

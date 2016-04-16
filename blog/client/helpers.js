@@ -10,15 +10,15 @@ Template.login.helpers({
 	}
 });
 
-Template.body.onRendered(function () { 
-    $('body').niceScroll({
-		scrollspeed: 120,
-    	mousescrollstep: 60,
-		bouncescroll: true,
-		touchbehavior: true,
-		hwacceleration: true,
-		smoothscroll: true,
-		bouncescroll: true,
-		grabcursorenabled: true
-	});
+Template.mainLayout.onRendered(function () { 
+ //    $('body').niceScroll({
+	// 	scrollspeed: 120,
+ //    	mousescrollstep: 60,
+	// 	bouncescroll: true,
+	// 	touchbehavior: true,
+	// 	hwacceleration: true,
+	// 	smoothscroll: true,
+	// 	bouncescroll: true,
+	// 	grabcursorenabled: true
+	// });
 });

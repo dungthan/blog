@@ -1,7 +1,21 @@
 var postFields = {
+	_id: {
+		type: String,
+		optional: true,
+		autoform: {
+			omit: true,
+		}
+	},
 	title: {
 		type: String,
 		label: 'Title',
+	},
+	slug: {
+		type: String,
+		optional: true,
+		autoform: {
+			omit: true
+		}
 	},
 	category: {
 		type: String,
@@ -10,7 +24,7 @@ var postFields = {
 		autoform: {
 			options: function () {
 				return Category.find().map(function (item) {
-					return { label: item.name, value: item.categorySlug };
+					return { label: item.name, value: item.slug };
 				});
 			}
 		}
@@ -28,6 +42,19 @@ var postFields = {
 			}
 		}
 	},
+	keyWord: {
+		type: String,
+		label: "Key Word",
+		optional: true
+	},
+	description: {
+		type: String,
+		label: 'Description',
+		autoform: {
+			type: 'textarea',
+			rows: 5
+		}
+	},
 	body: {
 		type: String,
 		label: 'Content',
@@ -37,11 +64,6 @@ var postFields = {
 			id: 'post-body',
 		}
 	},
-	// tag: {
-	// 	type: String,
-	// 	label: 'Tag',
-	// 	optional: true,
-	// },
 	categoryName: {
 		type: String,
 		optional: true,
@@ -49,11 +71,18 @@ var postFields = {
 			omit: true
 		}
 	},
-	_id: {
-		type: String,
+	active: {
+		type: Boolean,
 		optional: true,
 		autoform: {
-			omit: true,
+			omit: true
+		}
+	},
+	totalView: {
+		type: Number,
+		optional: true,
+		autoform: {
+			omit: true
 		}
 	},
 	userId: {
@@ -63,14 +92,14 @@ var postFields = {
 			omit: true,
 		}
 	},
-	author: {
-		type: String,
+	createdAt: {
+		type: Date,
 		optional: true,
 		autoform: {
 			omit: true
 		}
 	},
-	createdAt: {
+	updatedAt: {
 		type: Date,
 		optional: true,
 		autoform: {

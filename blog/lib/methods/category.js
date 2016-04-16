@@ -9,7 +9,7 @@ Meteor.methods({
 		var paramsCategory = {
 			userId: user._id,
 			createdAt: new Date(),
-			categorySlug: url_slug(category.name)
+			slug: url_slug(category.name)
 		};
 
 		_.extend(category, paramsCategory);
