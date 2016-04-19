@@ -17,6 +17,25 @@ NewPostController = BackEndController.extend({
 	}
 });
 
+PostCategoryController = BaseController.extend({
+	template: 'postsList',
+	findOptions: function() {
+		return { sort: { createdAt: -1 } };
+	},
+
+	waitOn: function() {
+		return [
+			Meteor.subscribe('listPosts', this.params.slug),
+			Meteor.subscribe('allThumbnails')
+		];
+	},
+	
+	data: function() {
+		console.log(this.params._id);
+		return { posts: Posts.find({}, this.findOptions())};
+	}
+});
+
 EditPostController = BackEndController.extend({
 	template: 'editPost',
 	waitOn: function () {

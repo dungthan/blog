@@ -9,8 +9,6 @@ Thumbnail = new FS.Collection('thumbnail', {
 	]
 });
 
-console.log(Meteor.settings.pathRoot);
-
 Thumbnail.allow({
 	insert: function (userId, doc) {
         return true;

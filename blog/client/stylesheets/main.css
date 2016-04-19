@@ -69,6 +69,31 @@ article .meta-info {
 	color: #aeaeae;
 	font-style: italic;
 }
+
+#right-area {
+	padding-top: 30px;
+	color: #454545;
+	padding-left: 30px;
+}
+
+ul.category-right {
+	list-style: none;
+	padding: 0px;
+}
+
+ul.category-right li {
+	padding-bottom: 9px;
+	font-size: 16px;
+}
+
+ul.category-right li a {
+	color: #454545;
+    text-decoration: none;
+}
+
+ul.category-right li a:hover {
+	color: #A08E8E;
+}
 /*
 end style for frontend
  */

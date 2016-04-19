@@ -1,0 +1,12 @@
+<template name='categorys'>
+	<h2>Categories</h2>
+	<ul class='category-right'>
+		{{#each categorys}}
+			<li>
+			{{#linkTo route='postCategory'}}
+				{{name}}
+			{{/linkTo}}
+			</li>
+		{{/each}}
+	</ul>
+</template>

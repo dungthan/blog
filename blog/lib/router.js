@@ -54,7 +54,12 @@ Router.route('/register', {
 	}
 });
 
-Router.route('/:_id', {
+Router.route('/:slug', {
+	name: 'postCategory',
+	controller: 'PostCategoryController'
+});
+
+Router.route('/:category/:_id/:slug.html', {
 	name: 'singlePost',
 	controller: 'SinglePageController'
 });

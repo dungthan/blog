@@ -22,3 +22,7 @@ Meteor.publish('singleThumbnail', function (id) {
 Meteor.publish('allThumbnails', function () {
 	return Thumbnail.find();
 });
+
+Meteor.publish('listPosts', function (category) {
+	return Posts.find({category: category});
+});
